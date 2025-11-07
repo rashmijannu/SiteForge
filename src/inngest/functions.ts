@@ -18,5 +18,11 @@ export const helloWorld = inngest.createFunction(
       `Write the following snippet: ${event.data.value}`,
     );
     return {output};
+  async ({ event, step }) => {
+    await step.sleep("wait-a-moment", "10s");
+    // return { message: `Hello ${event.data.email}!` };
+    //2
+     await step.sleep("wait-a-moment", "10s");
+    return { message: `Hello ${event.data.email}!` };
   },
 );
